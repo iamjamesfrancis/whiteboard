@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  user-select: none;
+}
+#whiteboard {
+  border: 5px solid grey;
+  height: 100%;
+  width: 100%;
+}
+
+#fullscreen {
+  cursor: pointer;
+}
+#fullscreen:hover {
+  transition: 0.5s ease-in-out;
+  transform: scale(0.9, 0.9);
+}
+#clearAll {
+  float: right;
+  text-transform: uppercase;
+  background-color: rgb(194, 2, 2);
+  outline: none;
+  border: 3px solid rgb(221, 59, 59);
+  padding: 5px 10px;
+  margin-right: 2%;
+  color: white;
+  border-radius: 5px;
+}
+#clearAll:hover {
+  transition: 0.5s ease-in-out;
+  box-shadow: 0px 0px 0px 3px rgb(241, 66, 66);
+}
+
+.nav-list {
+  display: inline;
+}
+
+.footer-items {
+  display: inline;
+}
+#circle,
+#square {
+  outline: none;
+  border: 3px solid rgb(62, 187, 245);
+  border-radius: 5px;
+  padding: 5px 10px;
+}

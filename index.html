@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./pencil.png" />
+    <!--Local css file-->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Local js file -->
+    <script src="./script.js"></script>
+    <!-- jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootsrap v4.5.2 -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Online Whiteboard</title>
+  </head>
+  <body>
+    <nav class="navbar bg-dark text-light">
+      <li class="nav-list" style="text-transform: uppercase; font-size: 20px">
+        Whiteboard
+      </li>
+      <!-- <li class="nav-list">
+        <input type="color" id="color" />
+
+        <button value="round" id="clearAll" class="eraser">Clear all</button>
+        <input type="checkbox" id="eraser-checkbox" hidden />
+        <input type="range" id="range" />
+        <button id="eraser">Eraser</button>
+      </li> -->
+
+      <li class="nav-list" id="fullscreen" title="Fullscreen">
+        <svg
+          width="2em"
+          height="2em"
+          viewBox="0 0 16 16"
+          class="bi bi-fullscreen"
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1h-4zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zM.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5z"
+          />
+        </svg>
+      </li>
+    </nav>
+    <canvas id="whiteboard"></canvas>
+    <br /><br />
+
+    <li class="footer-items">
+      <label for="color">
+        Color
+        <input type="color" id="color" title="Color" />
+      </label>
+    </li>
+
+    <li class="footer-items">
+      <label for="range" id="range-label">
+        Brush Size <span id="value">()</span>
+        <input
+          type="range"
+          id="range"
+          min="2"
+          max="50"
+          value="10"
+          title="Brush Size"
+        />
+      </label>
+    </li>
+    <li class="footer-items">
+      <button value="round" id="clearAll" class="eraser" title="Clear All ">
+        Clear all
+      </button>
+    </li>
+    <input type="file" id="image" accept="image/src" />
+    <input type="checkbox" name="" id="square-checkbox" hidden />
+    <button id="square">
+      <img src="./square.png" alt="" style="width: 40px" />
+    </button>
+    <input type="checkbox" name="" id="circle-checkbox" hidden />
+    <button id="circle">
+      <img src="./circle.png" alt="" style="width: 40px" />
+    </button>
+
+    <script>
+      $(document).ready(function () {
+        $(".items").hide();
+        $(".active").hide();
+
+        $("#eraser").click(() => {
+          $(".active").fadeToggle();
+        });
+        $("#shapes").click(function () {
+          $(".items").slideToggle();
+        });
+      });
+      //
+      //
+      //
+    </script>
+  </body>
+</html>
